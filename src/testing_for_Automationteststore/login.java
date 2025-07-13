@@ -50,6 +50,12 @@ public class login {
 		WebElement Cityinput = driver.findElement(By.xpath("//input[@name='city']"));
 		WebElement Country = driver.findElement(By.name("country_id"));
 		WebElement state = driver.findElement(By.name("zone_id"));
+		WebElement postalcode = driver.findElement(By.id("AccountFrm_postcode"));
+		WebElement loginName = driver.findElement(By.id("AccountFrm_loginname"));
+		WebElement passwordInput = driver.findElement(By.id("AccountFrm_password"));
+		WebElement passwordconfirmInput = driver.findElement(By.id("AccountFrm_confirm"));
+		WebElement PrivacyPolicy = driver.findElement(By.id("AccountFrm_agree"));
+
 		// data
 		String firstname = "Qutaiba";
 		String lastname = "hesham";
@@ -70,6 +76,7 @@ public class login {
 		Companyinput.sendKeys(Company);
 		Address1input.sendKeys(Address1);
 		Address2input.sendKeys(Address2);
+		postalcode.sendKeys("12345");
 		Cityinput.sendKeys(City);
 		Select myselectforcountry = new Select(Country);
 		// الطريقه رقم1 في الاختيار myselectforcountry.selectByIndex(3);
@@ -78,6 +85,10 @@ public class login {
 		myselectforcountry.selectByValue("108");
 		Select myselectforstate = new Select(state);
 		myselectforstate.selectByVisibleText("Al Karak");
+		loginName.sendKeys(firstname + lastname);
+		passwordInput.sendKeys("qwer@1234");
+		passwordconfirmInput.sendKeys("qwer@1234");
+		PrivacyPolicy.click();
 
 	}
 

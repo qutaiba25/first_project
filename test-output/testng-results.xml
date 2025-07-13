@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-13T06:30:48 GMT+03:00" name="Default suite" finished-at="2025-07-13T06:30:58 GMT+03:00" duration-ms="9802">
+  <suite started-at="2025-07-14T02:45:13 GMT+03:00" name="Default suite" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="9446">
     <groups>
     </groups>
-    <test started-at="2025-07-13T06:30:48 GMT+03:00" name="Default test" finished-at="2025-07-13T06:30:58 GMT+03:00" duration-ms="9802">
+    <test started-at="2025-07-14T02:45:13 GMT+03:00" name="Default test" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="9446">
       <class name="testing_for_Automationteststore.login">
-        <test-method is-config="true" signature="mysetup()[pri:0, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-13T06:30:48 GMT+03:00" name="mysetup" finished-at="2025-07-13T06:30:52 GMT+03:00" duration-ms="4145" status="PASS">
+        <test-method is-config="true" signature="mysetup()[pri:0, instance:testing_for_Automationteststore.login@31bcf236]" started-at="2025-07-14T02:45:13 GMT+03:00" name="mysetup" finished-at="2025-07-14T02:45:16 GMT+03:00" duration-ms="3128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mysetup -->
-        <test-method signature="SignUp()[pri:0, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-13T06:30:53 GMT+03:00" name="SignUp" finished-at="2025-07-13T06:30:58 GMT+03:00" duration-ms="5571" status="PASS">
+        <test-method signature="SignUp()[pri:0, instance:testing_for_Automationteststore.login@31bcf236]" started-at="2025-07-14T02:45:16 GMT+03:00" name="SignUp" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="6150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignUp -->
