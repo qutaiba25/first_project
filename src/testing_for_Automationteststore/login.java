@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -47,7 +48,8 @@ public class login {
 		WebElement Address1input = driver.findElement(By.xpath("//input[@name='address_1']"));
 		WebElement Address2input = driver.findElement(By.xpath("//input[@name='address_2']"));
 		WebElement Cityinput = driver.findElement(By.xpath("//input[@name='city']"));
-
+		WebElement Country = driver.findElement(By.name("country_id"));
+		WebElement state = driver.findElement(By.name("zone_id"));
 		// data
 		String firstname = "Qutaiba";
 		String lastname = "hesham";
@@ -69,10 +71,13 @@ public class login {
 		Address1input.sendKeys(Address1);
 		Address2input.sendKeys(Address2);
 		Cityinput.sendKeys(City);
-		
-		
-		
-		
+		Select myselectforcountry = new Select(Country);
+		// الطريقه رقم1 في الاختيار myselectforcountry.selectByIndex(3);
+		// الطريقة رقم2 في الاختيار myselectforcountry.selectByVisibleText("Jordan");
+		// الطريقة رقم3 في الاختيار myselectforcountry.selectByValue("108");
+		myselectforcountry.selectByValue("108");
+		Select myselectforstate = new Select(state);
+		myselectforstate.selectByVisibleText("Al Karak");
 
 	}
 
