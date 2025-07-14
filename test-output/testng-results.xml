@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-14T02:45:13 GMT+03:00" name="Default suite" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="9446">
+  <suite started-at="2025-07-14T11:57:18 GMT+03:00" name="Default suite" finished-at="2025-07-14T11:57:37 GMT+03:00" duration-ms="19163">
     <groups>
     </groups>
-    <test started-at="2025-07-14T02:45:13 GMT+03:00" name="Default test" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="9446">
+    <test started-at="2025-07-14T11:57:18 GMT+03:00" name="Default test" finished-at="2025-07-14T11:57:37 GMT+03:00" duration-ms="19163">
       <class name="testing_for_Automationteststore.login">
-        <test-method is-config="true" signature="mysetup()[pri:0, instance:testing_for_Automationteststore.login@31bcf236]" started-at="2025-07-14T02:45:13 GMT+03:00" name="mysetup" finished-at="2025-07-14T02:45:16 GMT+03:00" duration-ms="3128" status="PASS">
+        <test-method is-config="true" signature="mysetup()[pri:0, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-14T11:57:18 GMT+03:00" name="mysetup" finished-at="2025-07-14T11:57:21 GMT+03:00" duration-ms="3536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mysetup -->
-        <test-method signature="SignUp()[pri:0, instance:testing_for_Automationteststore.login@31bcf236]" started-at="2025-07-14T02:45:16 GMT+03:00" name="SignUp" finished-at="2025-07-14T02:45:23 GMT+03:00" duration-ms="6150" status="PASS">
+        <test-method signature="SignUp()[pri:1, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-14T11:57:21 GMT+03:00" name="SignUp" finished-at="2025-07-14T11:57:33 GMT+03:00" duration-ms="11116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignUp -->
+        <test-method signature="logout()[pri:2, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-14T11:57:33 GMT+03:00" name="logout" finished-at="2025-07-14T11:57:36 GMT+03:00" duration-ms="2917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method signature="Login()[pri:3, instance:testing_for_Automationteststore.login@4b3ed2f0]" started-at="2025-07-14T11:57:36 GMT+03:00" name="Login" finished-at="2025-07-14T11:57:37 GMT+03:00" duration-ms="1334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
       </class> <!-- testing_for_Automationteststore.login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

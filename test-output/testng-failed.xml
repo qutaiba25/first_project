@@ -5,8 +5,8 @@
     <classes>
       <class name="testing_for_Automationteststore.login">
         <methods>
+          <include name="Login"/>
           <include name="mysetup"/>
-          <include name="SignUp"/>
         </methods>
       </class> <!-- testing_for_Automationteststore.login -->
     </classes>
