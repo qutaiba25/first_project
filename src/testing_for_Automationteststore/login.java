@@ -159,7 +159,7 @@ public class login {
 //      List<WebElement> AllItems =TheFeatured.findElements(By.cssSelector(".col-md-3.col-sm-6.col-xs-12"));
 		List<WebElement> AllItems = TheFeatured.findElements(By.className("prdocutname"));
 		int randomProduct = rand.nextInt(AllItems.size());
-		AllItems.get(1).click();
+		AllItems.get(randomProduct).click();
 		Thread.sleep(2000);
 
 		String productPage = driver.findElement(By.className("productpagecart")).getText();
