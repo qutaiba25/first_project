@@ -1,5 +1,7 @@
 package testing_for_Automationteststore;
 
+import java.time.Duration;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -18,6 +20,8 @@ public class login {
 
 	String THEURL = "https://automationteststore.com/";
 
+	Random rand = new Random();
+
 	@BeforeTest
 
 	public void mysetup() throws InterruptedException {
@@ -25,13 +29,13 @@ public class login {
 		driver.get(THEURL);
 
 		driver.manage().window().maximize();
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 
 	public void SignUp() throws InterruptedException {
-
-		Random rand = new Random();
 
 		// WebElement firstresult =
 		// driver.findElement(By.xpath("//*[@id=\"customer_menu_top\"]/li/a"));
@@ -65,7 +69,9 @@ public class login {
 
 		// data
 		System.out.println(driver.getCurrentUrl());
-		rand.nextInt(9800);
+
+		int randomNumberForTheEMail = rand.nextInt(19800);
+		// rand.nextInt(9800);
 		String[] firstNames = { "anas", "ali", "kaled", "mamoun", "qutiba" };
 		int randomNameIndexForFirstNames = rand.nextInt(firstNames.length);
 		String randomFirstName = firstNames[randomNameIndexForFirstNames];
@@ -74,7 +80,7 @@ public class login {
 		int randomNameIndexForLastNames = rand.nextInt(lastNames.length);
 		String randomnLastName = lastNames[randomNameIndexForLastNames];
 
-		String EMail = randomFirstName + randomnLastName + "@gmail.com";
+		String EMail = randomFirstName + randomnLastName + randomNumberForTheEMail + "@gmail.com";
 		String Telephone = "0799628777";
 		String Fax = "8787";
 		String Company = "Zain";
@@ -112,7 +118,7 @@ public class login {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 
 	public void logout() throws InterruptedException {
 
@@ -124,7 +130,7 @@ public class login {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 
 	public void Login() {
 
@@ -138,6 +144,41 @@ public class login {
 		password.sendKeys(passwordlogin);
 
 		driver.findElement(By.xpath("//button[@title='Login']")).click();
+
+	}
+
+	@Test(priority = 4, invocationCount = 5, enabled = true)
+
+	public void addItemToTheCart() throws InterruptedException {
+		driver.navigate().to("https://automationteststore.com/");
+		String[] sectionsNames = { "featured", "latest", "bestseller", "special" };
+		int randomSectionsIndex = rand.nextInt(sectionsNames.length);
+		WebElement TheFeatured = driver.findElement(By.id(sectionsNames[randomSectionsIndex]));
+//		WebElement Container = driver.findElement(By.cssSelector(".col-md-12.col-xs-12.mt20"));
+//      هذه طريقه للدخول على العناصر لاكنها لا تفضل لانها ليست دقيقه ويمكن ان تضغط على مكان لا يدخلك للعصنر  
+//      List<WebElement> AllItems =TheFeatured.findElements(By.cssSelector(".col-md-3.col-sm-6.col-xs-12"));
+		List<WebElement> AllItems = TheFeatured.findElements(By.className("prdocutname"));
+		int randomProduct = rand.nextInt(AllItems.size());
+		AllItems.get(1).click();
+		Thread.sleep(2000);
+
+		String productPage = driver.findElement(By.className("productpagecart")).getText();
+		if (productPage.equals("Out of Stock")) {
+			driver.navigate().back();
+			System.out.println("sorry the item is not available");
+		} else {
+			System.out.println(driver.getCurrentUrl());
+			if (driver.getCurrentUrl().contains("product_id=116")) {
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"product\"]/fieldset/div[1]/div")).click();
+
+			}
+			{
+
+			}
+			driver.findElement(By.partialLinkText("Add to Cart")).click();
+
+		}
 
 	}
 
