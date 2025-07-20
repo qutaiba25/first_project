@@ -149,7 +149,7 @@ public class login {
 
 	public void Login() {
 
-		String loginConfirmationMessage = "Welcome back" ;
+		String loginConfirmationMessage = "Welcome back";
 
 		WebElement LoginorRegister = driver.findElement(By.partialLinkText("Login or re"));
 		LoginorRegister.click();
@@ -169,7 +169,7 @@ public class login {
 
 	}
 
-	@Test(priority = 4, invocationCount = 5, enabled = false)
+	@Test(priority = 4, invocationCount = 5, enabled = true)
 
 	public void addItemToTheCart() throws InterruptedException {
 		driver.navigate().to("https://automationteststore.com/");
