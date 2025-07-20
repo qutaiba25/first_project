@@ -1,5 +1,7 @@
 package testing_for_Automationteststore;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -9,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -33,9 +36,11 @@ public class login {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 
 	public void SignUp() throws InterruptedException {
+
+		String confirmationMessage = "Your Account Has Been Created!";
 
 		// WebElement firstresult =
 		// driver.findElement(By.xpath("//*[@id=\"customer_menu_top\"]/li/a"));
@@ -87,8 +92,9 @@ public class login {
 		String Address1 = "tt56";
 		String Address2 = "tf45";
 		String City = "Irbid";
+		username = randomFirstName + "_" + randomnLastName + randomNumberForTheEMail;
 
-		// Thread.sleep(3000);
+		Thread.sleep(3000);
 
 		// actions
 		firstNameinput.sendKeys(randomFirstName);
@@ -108,31 +114,42 @@ public class login {
 		myselectforcountry.selectByValue("108");
 		Select myselectforstate = new Select(state);
 		myselectforstate.selectByVisibleText("Al Karak");
-		username = randomFirstName + randomnLastName;
+		username = randomFirstName + "_" + randomnLastName + randomNumberForTheEMail;
 		loginName.sendKeys(username);
 		passwordInput.sendKeys(passwordlogin);
 		passwordconfirmInput.sendKeys(passwordlogin);
 		PrivacyPolicy.click();
 		Thread.sleep(3000);
 		ContinueButton.click();
+		Thread.sleep(1000);
+		boolean ActualResult = driver.getPageSource().contains(confirmationMessage);
+		Assert.assertEquals(ActualResult, true, "this is to check if the account is created");
 
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 
-	public void logout() throws InterruptedException {
+	public void logoff() throws InterruptedException {
+
+		String logoutconfirmationMessage = "Account Logout";
 
 		Thread.sleep(2000);
 
-		WebElement Logout = driver.findElement(By.linkText("Logoff"));
+		WebElement Logoff = driver.findElement(By.linkText("Logoff"));
 
-		Logout.click();
+		Logoff.click();
+
+		boolean actualResults = driver.getPageSource().contains(logoutconfirmationMessage);
+		boolean expectedResult = true;
+		Assert.assertEquals(actualResults, expectedResult, "this is to check that the user has been logged out");
 
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 
 	public void Login() {
+
+		String loginConfirmationMessage = ("My Account");
 
 		WebElement LoginorRegister = driver.findElement(By.partialLinkText("Login or re"));
 		LoginorRegister.click();
@@ -144,6 +161,10 @@ public class login {
 		password.sendKeys(passwordlogin);
 
 		driver.findElement(By.xpath("//button[@title='Login']")).click();
+
+		boolean ACtualREsuletlogin = driver.getPageSource().contains(loginConfirmationMessage);
+		boolean EXpectedREsultlogin = true;
+		Assert.assertEquals(ACtualREsuletlogin, EXpectedREsultlogin, "this is to check that the user has been logged in");
 
 	}
 
