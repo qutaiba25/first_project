@@ -7,8 +7,6 @@
         <methods>
           <include name="Login"/>
           <include name="mysetup"/>
-          <include name="SignUp"/>
-          <include name="logoff"/>
         </methods>
       </class> <!-- testing_for_Automationteststore.login -->
     </classes>

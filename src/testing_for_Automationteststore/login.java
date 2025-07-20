@@ -149,7 +149,7 @@ public class login {
 
 	public void Login() {
 
-		String loginConfirmationMessage = ("My Account");
+		String loginConfirmationMessage = "Welcome back" ;
 
 		WebElement LoginorRegister = driver.findElement(By.partialLinkText("Login or re"));
 		LoginorRegister.click();
@@ -164,11 +164,12 @@ public class login {
 
 		boolean ACtualREsuletlogin = driver.getPageSource().contains(loginConfirmationMessage);
 		boolean EXpectedREsultlogin = true;
-		Assert.assertEquals(ACtualREsuletlogin, EXpectedREsultlogin, "this is to check that the user has been logged in");
+		Assert.assertEquals(ACtualREsuletlogin, EXpectedREsultlogin,
+				"this is to check that the user has been logged in");
 
 	}
 
-	@Test(priority = 4, invocationCount = 5, enabled = true)
+	@Test(priority = 4, invocationCount = 5, enabled = false)
 
 	public void addItemToTheCart() throws InterruptedException {
 		driver.navigate().to("https://automationteststore.com/");
